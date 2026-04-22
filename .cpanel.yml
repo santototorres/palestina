@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/your_cpanel_username/public_html/new
+    - /bin/cp -R * \$DEPLOYPATH
+    - cd \$DEPLOYPATH
+    - composer install --no-dev --optimize-autoloader
+    - php artisan migrate --force
+    - php artisan config:cache
+    - php artisan route:cache
+    - php artisan view:cache
+    # For Vite compiled assets, typically you compile locally and commit the public/build directory,
+    # OR if Node is on the server, you could run npm install && npm run build here.

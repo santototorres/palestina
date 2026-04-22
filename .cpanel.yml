@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/your_cpanel_username/public_html/new
+    - export DEPLOYPATH=/home/gv8ld75dmsyh/public_html/new.palestinasi.ch
     - /bin/cp -R * \$DEPLOYPATH
     - cd \$DEPLOYPATH
     - composer install --no-dev --optimize-autoloader
